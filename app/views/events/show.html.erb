@@ -1,0 +1,14 @@
+<h1>Event center for <%= @event.title %></h1><br><br>
+
+<h2>Here are the attendees:</h2>
+
+  <% @event.attendees.each do |attendee| %>
+    <ul>
+    <%= attendee.username %>
+    </ul> 
+<% end %>
+
+<%= link_to "Home", users_path %>
+<%= link_to "Events", events_path %>
+<%= link_to "Edit Event", edit_event_path %>
+  

@@ -1,0 +1,24 @@
+<h1>Private-Events Event List</h1>
+
+<h2>Past Events</h2>
+<ul>
+  <% @events.past.each do |event| %>
+    <li>
+    <%= link_to event.title, event %>
+    </li>
+  <% end %>
+  
+</ul>
+
+<h2>Future Events</h2>
+<ul>
+  <% @events.future.each do |event| %>
+    <li>
+    <%= link_to event.title, event %>
+    </li>
+  <% end %>
+  
+</ul>
+
+<%= link_to "New Event", new_event_path %>
+<%= link_to "Home", users_path %>

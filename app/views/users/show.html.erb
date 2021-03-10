@@ -1,0 +1,24 @@
+<h1>This page belongs to <%= @user.username %></h1>
+
+<h2>They are attending:</h2>
+
+<% if @user.attended_events.any? %>
+<% @user.attended_events.each do |event| %>
+    <% if event.date < Time.now %>
+    <h2>Past Events</h2>
+    <ul>
+      <%= event.title %>
+    </ul>
+    <% else %>
+    <h2>Future Events</h2>
+    <ul>
+      <%= event.title %>
+    </ul>
+  <% end %>
+  
+ <% end %>
+<% else %> 
+ <h3>0 Events</h3>
+ 
+ 
+ <% end %>
